@@ -6,12 +6,12 @@ class Student < ActiveRecord::Base
 
   def self.have_siblings
     have_siblings = Student.where(siblings: true)
-    pp have_siblings.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
+    p have_siblings.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
   end
 
   def self.have_no_siblings
     no_siblings = Student.where(siblings: false)
-    pp no_siblings.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
+    p no_siblings.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
   end
 
   def self.have_pets_object
