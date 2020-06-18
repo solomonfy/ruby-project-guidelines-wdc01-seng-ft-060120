@@ -41,14 +41,6 @@ quality_time = LoveLanguage.create(:name => "Quality time", :description => "") 
 
 binding.pry
 
-=begin
-sol = Student.all.find_by(first_name: "")
-
-.personality_id
-
-
-    
-=end
 
 
 
