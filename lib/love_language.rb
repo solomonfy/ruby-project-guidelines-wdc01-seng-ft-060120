@@ -15,7 +15,7 @@ class LoveLanguage < ActiveRecord::Base
 
   def self.least_common_lovelanguage(give_get)
     if give_get.downcase == "Give".downcase || "Get".downcase
-      rare_lovel = StudLoveLanguage.where(type: give_get).group(:type).group(:love_language_id).order("count(love_language_id) ASC").limit(3).pluck(:love_language_id)
+      rare_lovel = StudLoveLanguage.where(type: give_get).group(:type).group(:love_language_id).order(love_language_id_count: :asc).limit(3).pluck(:love_language_id)
       rare_lovel_name = LoveLanguage.find(rare_lovel).pluck(:name).join(", ")
     end
   end
