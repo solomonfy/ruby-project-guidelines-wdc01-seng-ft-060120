@@ -6,20 +6,24 @@ class Student < ActiveRecord::Base
 
   def self.have_siblings
     have_siblings = Student.where(siblings: true)
-    p have_siblings.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
+    puts "Students who have siblings are:"
+    puts have_siblings.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
   end
 
   def self.have_no_siblings
     no_siblings = Student.where(siblings: false)
-    p no_siblings.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
+    puts "Students who have no siblings are:"
+    puts no_siblings.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
   end
 
   def self.have_pets_object
+    # puts "Students who have pets are:"
     Student.where(pets: true)
   end
 
   def self.have_pets_string
-    p Student.have_pets_object.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
+    puts "Students who have pets are:"
+    puts Student.have_pets_object.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
   end
 
   def self.have_no_pets_object
@@ -27,7 +31,8 @@ class Student < ActiveRecord::Base
   end
 
   def self.have_no_pets_string
-    p Student.have_no_pets_object.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
+    puts "Students who have no pets are:"
+    puts Student.have_no_pets_object.map {|a| "#{a.first_name} #{a.last_name}"}.join (", ")
   end
 
   def self.pets_majority
@@ -37,7 +42,7 @@ class Student < ActiveRecord::Base
       elsif ans == 0
         p "Students with AND without pets is the same!"
       elsif ans == 1
-        p "There are more students with pets!"
+        p "There are more students who have pets!"
       end
   end
   

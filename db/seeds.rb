@@ -39,6 +39,7 @@ gifts = LoveLanguage.create(:name => "Gifts", :description => "") #"Gifting is t
 acts = LoveLanguage.create(:name => "Acts of Service", :description => "") #"Actions that express gratitude and appreciation. Can be something as simple as holding the door, bringing you flowers/coffee (can be tied to a gift), helping out with chores or errands. This love language is rooted in actions.")
 quality_time = LoveLanguage.create(:name => "Quality time", :description => "") #"Expressing appreciation and love through undivided, focused attention and time spent together.")
 
+binding.pry
 
 =begin
 sol = Student.all.find_by(first_name: "")
